@@ -1,0 +1,15 @@
+{
+  "name": "tripvista-full",
+  "version": "1.0.0",
+  "main": "vite.config.js",
+  "scripts": {
+  "dev": "vite"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vite": "^7.0.6"
+  }
+}

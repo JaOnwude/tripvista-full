@@ -1,0 +1,1 @@
+export function renderHome() { document.getElementById('app').innerHTML = '<h2>Welcome to TessTrip!</h2>'; }
