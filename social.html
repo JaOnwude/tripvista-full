@@ -1,28 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TessTrip | Social Sharing</title>
-    <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
-        <header>
-            <div class="header-items">
-                <img src="images/logo.png" alt="logo" height="80" width="80">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="destination.html">Destination Guide</a></li>
-                        <li><a href="planner.html">Itinerary Planning</a></li>
-                        <li><a href="hotels.html">Hotels & Activities</a></li>
-                        <li><a href="social.html">Social Sharing</a></li>
-                        <li><a href="booking.html">Booking</a></li>
-                    </ul>
-                </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TripVista — Social</title>
+    <link rel="stylesheet" href="css/social.css" />
+    <link rel="stylesheet" href="css/navbar-footer.css" />
+    <script src="js/social.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="images/logo.png" alt="logo" width="100" height="100" />
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="itinerary-planner.html">Itinerary Planner</a></li>
+          <li><a href="hotels.html">Hotels & Activities</a></li>
+          <li><a href="social.html">Social Sharing</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+    <div class="wrap">
+      <section>
+        <h1>TripVista — Social</h1>
+        <div class="toolbar">
+          <button id="exportBtn" class="btn ghost">Export Feed</button>
+          <button id="importBtn" class="btn ghost">Import Feed</button>
+          <input
+            id="importFile"
+            type="file"
+            accept="application/json"
+            style="display: none"
+          />
+          <button id="clearBtn" class="btn ghost">Clear Feed</button>
+        </div>
+      </section>
+
+      <!-- New Post -->
+      <section class="soc-card new-post" aria-label="Create new post">
+        <div
+          style="
+            display: flex;
+            gap: 0.6rem;
+            align-items: center;
+            margin-bottom: 0.5rem;
+          "
+        >
+          <div class="avatar">T-S</div>
+          <div style="flex: 1">
+            <textarea
+              id="postText"
+              placeholder="Share a travel tip, photo, or story..."
+              maxlength="2000"
+              aria-label="Post text"
+            ></textarea>
+            <div class="controls">
+              <div class="uploader">
+                <input
+                  id="fileInput"
+                  type="file"
+                  accept="image/*"
+                  multiple
+                  style="display: none"
+                />
+                <button id="chooseBtn" class="btn ghost">Upload images</button>
+                <div class="small">Up to 4 images — compressed</div>
+              </div>
+
+              <div class="flex-right small" id="draftMsg">Draft saved</div>
+              <button id="postBtn" class="btn" disabled>Post</button>
             </div>
-        </header>
-        <main id="app"></main><footer><p>&copy; 2025 TessTrip. All rights reserved.</p></footer>
-        <script type="module">import { renderSocialFeed } from './js/social.js'; renderSocialFeed();</script>
-    </body>
+            <div class="preview-row" id="previewRow" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feed -->
+      <section class="feed" id="feed"></section>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-hidden="true">
+      <button class="close" id="lbClose">✕</button>
+      <button class="nav prev" id="lbPrev">‹</button>
+      <img id="lbImg" src="" alt="" />
+      <button class="nav next" id="lbNext">›</button>
+    </div>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-card">
+          <h3>Contact</h3>
+          <p>
+            📍 Address: 23, Aguogboriga, Democaracy Estate, Abakaliki, Ebonyi
+            State, Nigeria.
+          </p>
+          <p>📞 Phone: +2347066133703</p>
+          <p>✉ Email: jaonwude17@gmail.com</p>
+        </div>
+
+        <!-- About -->
+        <div class="footer-card">
+          <h3>About</h3>
+          <p>
+            TripVista is your trusted travel and tour companion. Discover
+            destinations, plan itineraries, and explore the world your way.
+          </p>
+        </div>
+
+        <!-- Socials -->
+        <div class="footer-card">
+          <h3>Socials</h3>
+          <ul class="social-links">
+            <li><a href="#">🌐 Facebook</a></li>
+            <li><a href="#">📸 Instagram</a></li>
+            <li><a href="#">🐦 Twitter</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-card">
+          <h3>Newsletter</h3>
+          <p>Subscribe to get the latest travel deals and tips.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 TripVista. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>

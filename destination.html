@@ -1,28 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TessTrip | Destination Guide</title>
-    <link rel="stylesheet" href="css/styles.css"></head>
-    <body>
-        <header>
-            <div class="header-items">
-                <img src="images/logo.png" alt="logo" height="80" width="80">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="destination.html">Destination Guide</a></li>
-                        <li><a href="planner.html">Itinerary Planning</a></li>
-                        <li><a href="hotels.html">Hotels & Activities</a></li>
-                        <li><a href="social.html">Social Sharing</a></li>
-                        <li><a href="booking.html">Booking</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main id="app"></main>
-        <footer><p>&copy; 2025 TessTrip. All rights reserved.</p></footer>
-        <script type="module">import { renderDestination } from './js/destination.js'; renderDestination();</script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TripVista — Destination Details</title>
+    <link rel="stylesheet" href="css/destination.css" />
+    <link rel="stylesheet" href="css/navbar-footer.css" />
+    <script src="js/destination.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="images/logo.png" alt="logo" width="100" height="100" />
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="itinerary-planner.html">Itinerary Planner</a></li>
+          <li><a href="hotels.html">Hotels & Activities</a></li>
+          <li><a href="social.html">Social Sharing</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <div class="search-row">
+        <input
+          id="cityInput"
+          type="search"
+          placeholder="Enter a city (e.g. London, Abuja, Bueno Aires)"
+        />
+        <button id="searchBtn">Search</button>
+        <button id="useQueryBtn">Use ?city= param</button>
+      </div>
+
+      <div id="status" class="small">Enter a city then click Search</div>
+
+      <section class="top" aria-labelledby="destTitle">
+        <div
+          class="left"
+          role="region"
+          aria-label="Photo gallery and quick info"
+        >
+          <h2 id="destTitle">Destination</h2>
+
+          <div id="gallery" class="gallery" aria-hidden="false">
+            <!-- images injected here -->
+          </div>
+
+          <div class="quickinfo" id="quickInfo">
+            <!-- country / region / population / coords -->
+          </div>
+        </div>
+
+        <aside class="right" role="complementary">
+          <h2 id="nameCard">—</h2>
+          <p id="desc" class="desc small">Description will appear here.</p>
+
+          <div>
+            <strong>Weather</strong>
+            <p id="weather" class="small">—</p>
+          </div>
+
+          <div style="margin-top: 10px; display: flex; gap: 0.5rem">
+            <button id="addItin">Add to Itinerary</button>
+            <button id="getDistanceBtn">Distance from my city</button>
+          </div>
+
+          <div
+            style="margin-top: 12px; font-size: 0.85rem; color: var(--muted)"
+          >
+            <div id="coords">Lat / Lon: —</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="des-cards" aria-label="Listings">
+        <div class="des-card" id="hotelsCard">
+          <h3>Hotels</h3>
+          <div id="hotelsList">—</div>
+        </div>
+        <div class="des-card" id="restaurantsCard">
+          <h3>Restaurants</h3>
+          <div id="restaurantsList">—</div>
+        </div>
+        <div class="des-card" id="thingsCard">
+          <h3>Things to Do</h3>
+          <div id="thingsList">—</div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-card">
+            <h3>Contact</h3>
+            <p>
+              📍 Address: 23, Aguogboriga, Democaracy Estate, Abakaliki, Ebonyi
+              State, Nigeria.
+            </p>
+            <p>📞 Phone: +2347066133703</p>
+            <p>✉ Email: jaonwude17@gmail.com</p>
+          </div>
+
+          <!-- About -->
+          <div class="footer-card">
+            <h3>About</h3>
+            <p>
+              TripVista is your trusted travel and tour companion. Discover
+              destinations, plan itineraries, and explore the world your way.
+            </p>
+          </div>
+          <!-- Socials -->
+          <div class="footer-card">
+            <h3>Socials</h3>
+            <ul class="social-links">
+              <li><a href="#">🌐 Facebook</a></li>
+              <li><a href="#">📸 Instagram</a></li>
+              <li><a href="#">🐦 Twitter</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-card">
+            <h3>Newsletter</h3>
+            <p>Subscribe to get the latest travel deals and tips.</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 TripVista. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>

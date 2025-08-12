@@ -1,53 +1,3 @@
-// export async function fetchGeoDBCities(query) {
-//   const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?namePrefix=${query}`;
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'X-RapidAPI-Key': import.meta.env.VITE_GEO_API_KEY,
-//       'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
-//     }
-//   };
-//   const response = await fetch(url, options);
-//   return response.json();
-// }
-
-// export async function fetchWeather(lat, lon) {
-//   const key = import.meta.env.VITE_WEATHER_API_KEY;
-//   const response = await fetch(
-//     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}&units=metric`
-//   );
-//   return response.json();
-// }
-
-// export async function getLocationIdFromTripAdvisor(city) {
-//   const url = `https://tripadvisor1.p.rapidapi.com/locations/search?query=${city}&lang=en_US`;
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'X-RapidAPI-Key': import.meta.env.VITE_TRIPADVISOR_API_KEY,
-//       'X-RapidAPI-Host': 'tripadvisor1.p.rapidapi.com'
-//     }
-//   };
-//   const response = await fetch(url, options);
-//   const data = await response.json();
-//   return data.data[0]?.result_object?.location_id || "297704";
-// }
-
-// export async function fetchTripAdvisorHotels(locationId) {
-//   const url = `https://tripadvisor1.p.rapidapi.com/hotels/list?location_id=${locationId}&adults=1&rooms=1&nights=2&offset=0&currency=USD&order=asc&limit=5&lang=en_US`;
-//   const options = {
-//     method: 'GET',
-//     headers: {
-//       'X-RapidAPI-Key': import.meta.env.VITE_TRIPADVISOR_API_KEY,
-//       'X-RapidAPI-Host': 'tripadvisor1.p.rapidapi.com'
-//     }
-//   };
-//   const response = await fetch(url, options);
-//   const data = await response.json();
-//   return data.data || [];
-// }
-
-
 const API_KEY = "39017a5e65df3fccd45e4dab868dd097260573cd3225a6eddffe02fd033c11e1"; 
 const API_HOST = "tripadvisor1.p.rapidapi.com";
 
@@ -58,7 +8,7 @@ export async function getLocationIdFromTripAdvisor(city) {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': API_KEY,
+      'X-RapidAPI-Key': e8fcedc590msh694e0b28b917a00p17b699jsne2d687f0b90c,
       'X-RapidAPI-Host': API_HOST,
     },
   };

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TripVista — Itinerary Planner</title>
+    <link rel="stylesheet" href="css/itinerary-planner.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/planner.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="images/logo.png" alt="logo" width="100" height="100" />
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="itinerary-planner.html">Itinerary Planner</a></li>
+          <li><a href="hotels.html">Hotels & Activities</a></li>
+          <li><a href="social.html">Social Sharing</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+    <h1>TripVista — Itinerary Planner</h1>
+    <section class="wrap">
+      <header>
+        <div>          
+          <h2 class="small">
+            Plan days, add places, drag to reorder, export or share.
+          </h2>
+        </div>
+        <div class="controls toolbar">
+          <button id="saveBtn" title="Save itinerary">Save</button>
+          <button id="exportBtn" title="Download JSON">Export</button>
+          <button id="shareBtn" title="Share itinerary">Share</button>
+          <button id="clearBtn" class="ghast" title="Clear itinerary">
+            Clear
+          </button>
+        </div>
+      </header>
+      <main>
+      <div class="layout">
+        <!-- LEFT CARD: Summary, Weather, Notes -->
+        <div class="it-card left">
+          <div class="section">
+            <h2>Summary</h2>
+            <div class="summary-row">
+              <div class="meta" id="metaDays">Days: 0</div>
+              <div class="meta" id="metaPlaces">Places: 0</div>
+            </div>
+            <div style="margin-top: 0.5rem" class="small">
+              Selected Day: <strong id="selectedDayLabel">—</strong>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Weather (for selected day)</h2>
+            <div id="weatherCard" class="small">
+              No city selected for this day.
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Notes</h2>
+            <textarea
+              id="globalNotes"
+              placeholder="Trip notes — saved automatically"
+            ></textarea>
+          </div>
+
+          <div class="section small">
+            <strong>Quick actions</strong>
+            <div class="actions">
+              <button id="addDayBtn" class="small-btn">+ Add Day</button>
+              <button id="addPlaceBtn" class="small-btn">+ Add Place</button>
+              <button id="addNoteBtn" class="small-btn">
+                + Add Note to Day
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT CARD: Planner & Drag-n-drop -->
+        <div class="it-card right">
+          <div class="section planner-controls">
+            <label style="display: flex; align-items: center; gap: 0.4rem">
+              <input type="checkbox" id="dragToggle" checked />
+              <span class="small">Enable drag & drop</span>
+            </label>
+
+            <div style="margin-left: auto; display: flex; gap: 0.5rem">
+              <button id="addDayBtnTop" class="ghost small-btn">Add Day</button>
+              <button id="exportBtnTop" class="ghost small-btn">Export</button>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Days</h2>
+            <div id="daysPills" class="days-list"></div>
+            <div id="dayArea" class="day-area" aria-live="polite"></div>
+          </div>
+
+          <div class="section small">
+            <strong>Instructions</strong>
+            <ol>
+              <li>Create days with <em>Add Day</em>.</li>
+              <li>
+                Select a day, then use <em>Add Place</em> to insert a place
+                (name + optional city).
+              </li>
+              <li>Drag places to reorder when drag is enabled.</li>
+              <li>
+                Use Export to download a JSON backup, Share to share via device,
+                Save to persist.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer-container">
+      <!-- Contact -->
+      <div class="footer-card">
+          <h3>Contact</h3>
+          <p>
+            📍 Address: 23, Aguogboriga, Democaracy Estate, Abakaliki, Ebonyi
+            State, Nigeria.
+          </p>
+          <p>📞 Phone: +2347066133703</p>
+          <p>✉ Email: jaonwude17@gmail.com</p>
+        </div>
+
+        <!-- About -->
+        <div class="footer-card">
+          <h3>About</h3>
+          <p>
+            TripVista is your trusted travel and tour companion. Discover
+            destinations, plan itineraries, and explore the world your way.
+          </p>
+        </div>
+
+      <!-- Socials -->
+      <div class="footer-card">
+        <h3>Socials</h3>
+        <ul class="social-links">
+          <li><a href="#">🌐 Facebook</a></li>
+          <li><a href="#">📸 Instagram</a></li>
+          <li><a href="#">🐦 Twitter</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-card">
+        <h3>Newsletter</h3>
+        <p>Subscribe to get the latest travel deals and tips.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TripVista. All rights reserved.</p>
+    </div>
+  </footer>
+  </body>
+</html>

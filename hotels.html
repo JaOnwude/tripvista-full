@@ -1,29 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TessTrip | Hotels & Activities</title><link rel="stylesheet" href="css/styles.css">
-        <script type="module">import { renderHotelsActivities } from './js/hotels.js'; renderHotelsActivities();</script>
-    </head>
-    <body>
-        <header>
-            <div class="header-items">
-                <img src="images/logo.png" alt="logo" height="80" width="80">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="destination.html">Destination Guide</a></li>
-                        <li><a href="planner.html">Itinerary Planning</a></li>
-                        <li><a href="hotels.html">Hotels & Activities</a></li>
-                        <li><a href="social.html">Social Sharing</a></li>
-                        <li><a href="booking.html">Booking</a></li>
-                    </ul>
-                </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TripVista — Hotels & Activities</title>
+    <link rel="stylesheet" href="css/hotels.css" />
+    <link rel="stylesheet" href="css/navbar-footer.css" />
+    <script src="js/hotels.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <img src="images/logo.png" alt="logo" width="100" height="100" />
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="itinerary-planner.html">Itinerary Planner</a></li>
+          <li><a href="hotels.html">Hotels & Activities</a></li>
+          <li><a href="social.html">Social Sharing</a></li>
+          <li><a href="booking.html">Booking</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="wrap">
+      <!-- Top controls -->
+      <div class="panel">
+        <div class="section-row">
+          <label for="citySelect" class="small">City</label>
+          <select id="citySelect">
+            <option value="">Search or choose a city...</option>
+          </select>
+
+          <input
+            id="citySearch"
+            placeholder="Type a city name & press Enter"
+            style="min-width: 220px"
+          />
+          <button id="searchBtn">Search</button>
+
+          <div style="margin-left: auto" class="small">
+            Trip results update as you search
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- LEFT: results and filters -->
+        <div class="left-col">
+          <!-- Hotels Section -->
+          <div class="panel" id="hotelsPanel">
+            <div class="section-title">
+              <h3>Hotels</h3>
+              <div class="small pill" id="hotelsCount">—</div>
             </div>
-        </header>
-    <main id="app"></main>
-    <footer>
-        <p>&copy; 2025 TessTrip. All rights reserved.</p>
+
+            <div class="filters" id="hotelsFilters">
+              <label class="small"
+                >Min rating
+                <select id="hotelMinRating">
+                  <option value="0">Any</option>
+                  <option>3</option>
+                  <option>3.5</option>
+                  <option>4</option>
+                  <option>4.5</option>
+                </select>
+              </label>
+              <label class="small"
+                >Price level
+                <select id="hotelPriceLevel">
+                  <option value="">Any</option>
+                  <option value="1">$</option>
+                  <option value="2">$$</option>
+                  <option value="3">$$$</option>
+                </select>
+              </label>
+              <label class="small"
+                >Sort
+                <select id="hotelSort">
+                  <option value="rating_desc">Rating ↓</option>
+                  <option value="rating_asc">Rating ↑</option>
+                  <option value="price_asc">Price ↑</option>
+                  <option value="price_desc">Price ↓</option>
+                </select>
+              </label>
+              <div class="controls-bottom">
+                <button id="loadMoreHotels" class="ghost">Load more</button>
+              </div>
+            </div>
+
+            <div id="hotelsResults" class="results"></div>
+            <div id="hotelsState" class="loading" hidden>Loading hotels…</div>
+          </div>
+
+          <!-- Activities Section -->
+          <div class="panel" id="activitiesPanel">
+            <div class="section-title">
+              <h3>Things to Do</h3>
+              <div class="small pill" id="activitiesCount">—</div>
+            </div>
+
+            <div class="filters" id="activitiesFilters">
+              <label class="small"
+                >Min rating
+                <select id="actMinRating">
+                  <option value="0">Any</option>
+                  <option>3</option>
+                  <option>3.5</option>
+                  <option>4</option>
+                  <option>4.5</option>
+                </select>
+              </label>
+              <label class="small"
+                >Sort
+                <select id="actSort">
+                  <option value="rating_desc">Rating ↓</option>
+                  <option value="rating_asc">Rating ↑</option>
+                </select>
+              </label>
+              <div class="controls-bottom">
+                <button id="loadMoreActs" class="ghost">Load more</button>
+              </div>
+            </div>
+
+            <div id="activitiesResults" class="results"></div>
+            <div id="activitiesState" class="loading" hidden>
+              Loading activities…
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: side-panel with details & top picks -->
+        <aside class="right-col side-panel">
+          <div class="panel-row">
+            <div>
+              <h4>Top Picks</h4>
+              <div id="topPicks" class="small">—</div>
+            </div>
+
+            <div>
+              <h4>Selected item</h4>
+              <div id="selectedCard" class="small">
+                Click a card to see details here
+              </div>
+            </div>
+
+            <div>
+              <h4>Filters summary</h4>
+              <div id="filterSummary" class="small">—</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 1rem">
+            <button id="openMap" class="ghost">Open in map</button>
+            <button id="clearFilters" class="ghost">Clear filters</button>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Contact -->
+        <div class="footer-card">
+          <h3>Contact</h3>
+          <p>
+            📍 Address: 23, Aguogboriga, Democaracy Estate, Abakaliki, Ebonyi
+            State, Nigeria.
+          </p>
+          <p>📞 Phone: +2347066133703</p>
+          <p>✉ Email: jaonwude17@gmail.com</p>
+        </div>
+
+        <!-- About -->
+        <div class="footer-card">
+          <h3>About</h3>
+          <p>
+            TripVista is your trusted travel and tour companion. Discover
+            destinations, plan itineraries, and explore the world your way.
+          </p>
+        </div>
+
+        <!-- Socials -->
+        <div class="footer-card">
+          <h3>Socials</h3>
+          <ul class="social-links">
+            <li><a href="#">🌐 Facebook</a></li>
+            <li><a href="#">📸 Instagram</a></li>
+            <li><a href="#">🐦 Twitter</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-card">
+          <h3>Newsletter</h3>
+          <p>Subscribe to get the latest travel deals and tips.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 TripVista. All rights reserved.</p>
+      </div>
     </footer>
-    </body>
+  </body>
 </html>
