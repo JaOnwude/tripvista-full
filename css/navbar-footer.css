@@ -97,7 +97,7 @@ header {
     .nav-links.open {
         height: 300px;
     }
-    
+
     .hamburger.open::before {
     content: "❌";
 }
@@ -146,12 +146,20 @@ header {
 }
 
 .social-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
     padding: 0;
 }
 
+.social-links img {
+    border-radius: 50%;
+}
+
 .social-links li {
-    margin-bottom: 8px;
+    margin: 1rem 5px 0;
+
 }
 
 .social-links a {
@@ -205,7 +213,7 @@ header {
     }
 
     .footer-card {
-        width: 100%;
+        width: 90%;
     }
 }
 

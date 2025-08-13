@@ -4,17 +4,10 @@
     --accent-color: #ffc107;
     --background-color: #f8f9fa;
     --text-color: #212529;
-    --font-family: 'Roboto', 'Poppins', sans-serif;
+    --font-family: 'Roboto', 'Nunito', sans-serif;
     --muted: #666;
     --card: #ddd;
     --bg: #f4f6f8;
-}
-
-body {
-    font-family: var(--font-family);
-    margin: 0;
-    background: var(--background-color);
-    color: #111;
 }
 
 /* header {
@@ -48,12 +41,18 @@ input[type="search"] {
 }
 
 button {
-    background: var(--primary);
-    color: #fff;
+    background: #007bff;
+    color: var(--background-color);
     border: none;
     padding: 0.6rem 0.9rem;
     border-radius: 8px;
     cursor: pointer;
+    font-weight: 800;
+    &&:hover {
+        background: var(--accent-color);
+        color: navy;
+        transition: .5s ease-in-out;
+    }
 }
 
 .top {
@@ -64,10 +63,10 @@ button {
 
 .left,
 .right {
-    background: var(--card);
+    background: #f8f9fa;
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .left {
@@ -129,10 +128,11 @@ h2 {
 }
 
 .des-card {
-    background: var(--card);
+    background: #f8f9fa;
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) */
 }
 
 .list-item {
@@ -149,11 +149,5 @@ h2 {
 
 .small {
     font-size: 0.9rem;
-    color: var(--muted);
-}
-
-footer {
-    margin: 2rem 0;
-    text-align: center;
-    color: var(--muted);
+    color: var(--bg);
 }
