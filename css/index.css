@@ -10,23 +10,31 @@
     --bg: #f4f6f8;
 }
 
-/* .home-hero-section {
+.home-hero-section {
     position: relative;
 }
 
 .plan-dream {
     position: absolute;
-    top: 20px;
+    background-color: var(--text-color);
+    color: var(--bg);
+    padding: .25rem;
+    top: 150px;
     left: 20px;
 }
 
 .planBtn {
     position: absolute;
-    bottom: 80px;
+    bottom: 50px;
     right: 20px;
     padding: .5rem 1rem;
     background-color: var(--primary-color);
     border-radius: 6px;
+
+    &&:hover {
+        background-color: #ffc107;
+        transition: .5s ease-in-out;
+    }
 
     a {
         color: var(--background-color);
@@ -37,9 +45,10 @@
         &&:hover {
             color: #000;
             text-decoration: underline;
+            transition: .5s ease-in-out;
         }
     }
-} */
+}
 
 .container {
     width: 90%;

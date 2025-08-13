@@ -24,6 +24,11 @@ header {
     text-align: center;
 }
 
+.change-height {
+    transition: .5s ease-in-out;
+    margin-bottom: 300px;
+}
+
 /* //////////////////////////////////////////// */
 
 .navbar {
@@ -95,6 +100,7 @@ header {
     }
 
     .nav-links.open {
+        transition: .5s ease-in-out;
         height: 300px;
     }
 
@@ -110,6 +116,10 @@ header {
 
     .hamburger {
         display: flex;
+    }
+
+    .plan-dream {
+        display: none;
     }
 }
 
@@ -154,6 +164,8 @@ header {
 }
 
 .social-links img {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
 
@@ -216,4 +228,3 @@ header {
         width: 90%;
     }
 }
-
