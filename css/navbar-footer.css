@@ -117,11 +117,7 @@ header {
     .hamburger {
         display: flex;
     }
-
-    /* .plan-dream {
-        display: none;
-    }
-} */
+}
 
 /* Footer Styles */
 .footer {
