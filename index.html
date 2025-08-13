@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Giving information about available courses to our students is a top priority to us. This page gives a detailed information about our courses to our students"
+    />
+    <meta name="Author" content="Onwude James Uchenna" />
+    <meta property="og:title" content="WDD330" />
+    <meta
+      property="og:description"
+      content="Discover the innovative world of chamber of commerce and place for sale or order to buy any product of yiur choice, plus explore entertainment and expert sales support"
+    />
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:url" content="https://www.tripvistanaija.com.ng" />
     <title>TripVista - Homepage</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/navbar-footer.css" />
     <script src="js/home.js" defer></script>
@@ -21,11 +40,7 @@
           <li><a href="social.html">Social Sharing</a></li>
           <li><a href="booking.html">Booking</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <a class="hamburger" id="hamburger"></a>
       </nav>
     </header>
     <section class="home-hero-section">
@@ -35,8 +50,11 @@
         height="400"
         width="100%"
       />
-      <h2>Plan Your Dream Trip</h2>
-      <button>Start Planning</button>
+      <h1>Home</h1>
+      <h2 class="plan-dream">Plan Your Dream Trip</h2>
+      <button class="planBtn">
+        <a href="itinerary-planner.html">Start Planning</a>
+      </button>
     </section>
 
     <div class="container">
@@ -72,9 +90,33 @@
       <div class="footer-card">
         <h3>Socials</h3>
         <ul class="social-links">
-          <li><a href="#">🌐 Facebook</a></li>
-          <li><a href="#">📸 Instagram</a></li>
-          <li><a href="#">🐦 Twitter</a></li>
+          <li>
+            <a href="https://www.tiktok.com"
+              ><img
+                src="images/tiktok-icon.webp"
+                alt="tiktok-icon"
+                width="50"
+                height="50"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com"
+              ><img
+                src="images/facebook-icon.webp"
+                alt="facebook-icon"
+                width="50"
+                height="50"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com"
+              ><img
+                src="images/YouTube-logo.jpeg"
+                alt="YouTube-logo"
+                width="50"
+                height="50"
+            /></a>
+          </li>
         </ul>
       </div>
 
@@ -89,7 +131,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 TripVista. All rights reserved.</p>
+      <p>
+        &copy;<span id="currentyear"></span> TripVista. All rights reserved.
+      </p>
     </div>
   </footer>
 </html>
+<p>&copy;<span id="currentyear"></span> TripVista</p>

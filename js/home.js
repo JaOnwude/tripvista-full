@@ -1,5 +1,6 @@
       const RAPIDAPI_KEY = "e8fcedc590msh694e0b28b917a00p17b699jsne2d687f0b90c"; 
       const OPENWEATHER_KEY = "5bf3d3e13785fa06895c717e38cefa7f"; 
+      
       async function fetchTopDestinations() {
         const url =
           "https://wft-geo-db.p.rapidapi.com/v1/geo/cities?limit=4&sort=-population&countryIds=NG"; 
@@ -92,11 +93,3 @@
       }
 
       init();
-
-      //Mobile Menu Toggle 
-      // const hamburger = document.getElementById("hamburger");
-      // const navLinks = document.getElementById("navLinks");
-
-      // hamburger.addEventListener("click", () => {
-      //   navLinks.classList.toggle("open");
-      // });

@@ -1,3 +1,29 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --accent-color: #ffc107;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --font-family: 'Roboto', 'Poppins', sans-serif;
+    --muted: #666;
+    --card: #ddd;
+    --bg: #f4f6f8;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    background: var(--background-color);
+    color: #111;
+}
+
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: .5rem;
+    text-align: center;
+}
+
 /* //////////////////////////////////////////// */
 
 .navbar {
@@ -25,14 +51,16 @@
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 1rem;
     padding: 1rem;
     border-radius: 6px;
 }
 
 .nav-links a:hover {
     text-decoration: underline;
-    background-color: #909aa451;
+    background-color: #333;
+    transition: .5s ease-in-out;
     /* padding: 10px; */
 }
 
@@ -43,31 +71,37 @@
     cursor: pointer;
 }
 
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background: white;
-    margin: 4px;
-    transition: 0.3s;
+.hamburger::before {
+    font-size: large;
+    font-weight: 700;
+    /* width: 25px;
+    height: 3px; */
+    content: "☰";
 }
+
 
 /* ===== Mobile Menu ===== */
 @media (max-width: 768px) {
     .nav-links {
         position: absolute;
-        top: 60px;
+        top: 110px;
         right: 0;
         height: 0;
         overflow: hidden;
         flex-direction: column;
-        background: #0d47a1;
+        background: var(--primary-color);
         width: 100%;
         transition: height 0.3s ease-in-out;
     }
 
     .nav-links.open {
-        height: 280px;
+        height: 300px;
     }
+    
+    .hamburger.open::before {
+    content: "❌";
+}
+
 
     .nav-links li {
         margin: 1rem 0;
@@ -95,7 +129,7 @@
 
 .footer-card {
     flex: 1 1 200px;
-    background: var(--muted);
+    background: var(--secondary-color);
     padding: 20px;
     border-radius: 10px;
 }
