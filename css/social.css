@@ -24,7 +24,7 @@ body {
     padding: 1rem;
 }
 
-header {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,7 +33,7 @@ header {
 }
 
 header h1 {
-    margin: 0;
+    margin: 5px;
     /* font-size: 1.2rem; */
 }
 
@@ -41,6 +41,10 @@ header h1 {
     display: flex;
     gap: 0.6rem;
     align-items: center;
+}
+
+.navbar {
+    width: 100%;
 }
 
 .soc-card {
