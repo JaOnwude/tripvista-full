@@ -148,12 +148,22 @@ const RAPIDAPI_KEY = "e8fcedc590msh694e0b28b917a00p17b699jsne2d687f0b90c";
         }
       }
 
-      /* ---------------- Get images for gallery ----------------
-  We'll attempt:
-   1) Use TripAdvisor items' photos (if present)
-   2) Use Wikimedia images via page summary (thumbnail)
-   3) Use placeholder images otherwise
-----------------------------------------------------*/
+const fallbackImages = [
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+  "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+  "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
+   "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg", 
+  "https://images.pexels.com/photos/21014/pexels-photo.jpg",
+  "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg", 
+  "https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg", 
+  "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg", 
+  "https://images.pexels.com/photos/35600/road-sun-rays-path.jpg", 
+  "https://images.pexels.com/photos/248771/pexels-photo-248771.jpeg", 
+  "https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg", 
+  "https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg",
+  "https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg" 
+];
       function buildGalleryFromTripData(itemsArray) {
         const imgs = [];
         if (!itemsArray || !itemsArray.length) return imgs;
@@ -178,7 +188,7 @@ const RAPIDAPI_KEY = "e8fcedc590msh694e0b28b917a00p17b699jsne2d687f0b90c";
           // fallback placeholders
           for (let i = 0; i < 4; i++) {
             const el = document.createElement("img");
-            el.src = `https://via.placeholder.com/600x400?text=Image+${i + 1}`;
+            el.src = fallbackImages[Math.floor(Math.random() * fallbackImages.length)];
             gallery.appendChild(el);
           }
           return;
