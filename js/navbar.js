@@ -11,8 +11,3 @@ hamburger.addEventListener("click", () => {
 navLinks.classList.toggle("open");
 navBar.classList.toggle('change-height');
 });
-
-// hamburger.addEventListener('click', () => {
-// 	navigation.classList.toggle('show');
-// 	hamburgerButton.classList.toggle('show');
-// });
