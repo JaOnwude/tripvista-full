@@ -96,6 +96,11 @@ header h1 {
     color: var(--muted);
 }
 
+.comment-send {
+    color: #fff;
+    font-weight: 600;
+}
+
 .uploader {
     display: flex;
     gap: 0.5rem;
@@ -235,7 +240,6 @@ header h1 {
     align-items: center;
 }
 
-/* lightbox */
 .lightbox {
     position: fixed;
     inset: 0;
