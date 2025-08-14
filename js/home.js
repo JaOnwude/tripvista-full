@@ -1,5 +1,13 @@
-      const RAPIDAPI_KEY = "e8fcedc590msh694e0b28b917a00p17b699jsne2d687f0b90c"; 
+    
+     const RAPIDAPI_KEY = "e8fcedc590msh694e0b28b917a00p17b699jsne2d687f0b90c"; 
       const OPENWEATHER_KEY = "5bf3d3e13785fa06895c717e38cefa7f"; 
+      
+const fallbackImages = [
+  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+  "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+  "https://images.unsplash.com/photo-1526772662000-3f88f10405ff"
+];
       
       async function fetchTopDestinations() {
         const url =
@@ -16,7 +24,7 @@
         return data.data.map((city) => ({
           name: city.city,
           country: city.country,
-          image: `https://source.unsplash.com/400x300/?${city.city}`, // Unsplash random city photo
+          image: fallbackImages[Math.floor(Math.random() * fallbackImages.length)],
         }));
       }
 
