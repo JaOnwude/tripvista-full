@@ -149,20 +149,16 @@ const RAPIDAPI_KEY = "e8fcedc590msh694e0b28b917a00p17b699jsne2d687f0b90c";
       }
 
 const fallbackImages = [
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-  "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
-  "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-  "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
-   "https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg", 
-  "https://images.pexels.com/photos/21014/pexels-photo.jpg",
-  "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg", 
-  "https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg", 
-  "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg", 
-  "https://images.pexels.com/photos/35600/road-sun-rays-path.jpg", 
-  "https://images.pexels.com/photos/248771/pexels-photo-248771.jpeg", 
-  "https://images.pexels.com/photos/460376/pexels-photo-460376.jpeg", 
-  "https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg",
-  "https://images.pexels.com/photos/237272/pexels-photo-237272.jpeg" 
+  "https://images.pexels.com/photos/1005416/pexels-photo-1005416.jpeg", 
+  "https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg", 
+  "https://images.pexels.com/photos/210243/pexels-photo-210243.jpeg",
+  "https://images.pexels.com/photos/161956/pexels-photo-161956.jpeg",
+  "https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg",
+  "https://images.pexels.com/photos/208739/pexels-photo-208739.jpeg", 
+  "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg", 
+  "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg", 
+  "https://images.pexels.com/photos/2103127/pexels-photo-2103127.jpeg",
+  "https://images.pexels.com/photos/301614/pexels-photo-301614.jpeg"
 ];
       function buildGalleryFromTripData(itemsArray) {
         const imgs = [];
